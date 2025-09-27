@@ -16,9 +16,6 @@ USEROPTS="-a -u -g audio,input,video,netdev tie"
 # Use busybox ntpd
 NTPOPTS="busybox"
 
-# Install dropbear instead of openssh
-SSHDOPTS=dropbear
-
 # Set to `none`, we will custom later
 DISKOPTS=none
 
