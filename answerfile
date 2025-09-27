@@ -1,0 +1,35 @@
+KEYMAPOPTS="us us"
+
+# Set hostname to 'alpine'
+HOSTNAMEOPTS=x509fa
+
+# Contents of /etc/network/interfaces
+INTERFACESOPTS="auto lo
+iface lo inet loopback
+
+auto wlan0
+iface wlan0 inet dhcp
+"
+
+TIMEZONEOPTS=Asia/Bangkok
+
+# Add first mirror (CDN)
+APKREPOSOPTS="-1"
+
+# Create admin user
+# 
+# replace `tie` with YOUR_USER_NAME
+USEROPTS="-a -u -g audio,input,video,netdev tie"
+
+# Use busybox ntpd
+NTPOPTS="busybox"
+
+# Install dropbear instead of openssh
+SSHDOPTS=dropbear
+
+# Set to `none`, we will custom later
+DISKOPTS=none
+
+APKCACHEOPTS=none
+
+# Read more: https://wiki.alpinelinux.org/wiki/Using_an_answerfile_with_setup-alpine
