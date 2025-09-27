@@ -3,14 +3,6 @@ KEYMAPOPTS="us us"
 # Set hostname to 'alpine'
 HOSTNAMEOPTS=x509fa
 
-# Contents of /etc/network/interfaces
-INTERFACESOPTS="auto lo
-iface lo inet loopback
-
-auto wlan0
-iface wlan0 inet dhcp
-"
-
 TIMEZONEOPTS=Asia/Bangkok
 
 # Add first mirror (CDN)
