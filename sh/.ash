@@ -1,0 +1,54 @@
+# .ash
+
+# Source global definitions
+if [ -f /etc/ash ]; then
+    . /etc/ash
+fi
+
+# Add my scripts
+PATH="${HOME}/scripts:${PATH}"
+
+export PATH
+
+# If startship is installed do:
+if command -v startship > /dev/null; then
+	eval "$(starship init bash)"
+fi
+
+# If fzf is installed do:
+if [ -f "${HOME}/.fzf" ]; then
+	eval "$(fzf --bash)"
+fi
+
+# Git aliases
+alias gtree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
+alias g3="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
+alias gt="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
+
+alias ginit='git init'
+alias gpull='git pull'
+alias gpl='git pull'
+alias gpush='git push'
+alias gph='git push'
+alias gdiff='git diff'
+alias gdf='git diff'
+alias gss='git status'
+alias gadd='git add'
+alias gcom='git commit -m'
+alias gcomamd='git commit --amend'
+alias gct='git commit -m'
+alias gctd='git commit --amend'
+alias gre='git restore'
+alias grt='git reset'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gck='git checkout'
+alias gckb='git checkout -b'
+alias gch='git checkout'
+alias gchb='git checkout -b'
+alias gfa='git fetch --all'
+alias grv='git remote -v'
+alias gra='git remote add'
+alias gc=git-crypt
+alias gg=lazygit
+

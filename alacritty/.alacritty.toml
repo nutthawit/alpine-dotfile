@@ -1,0 +1,25 @@
+[general]
+import = [
+  # "~/.config/alacritty/themes/themes/solarized_dark.toml"
+  # "~/.config/alacritty/themes/themes/solarized_light.toml"
+  # "~/.config/alacritty/themes/themes/solarized_osaka.toml"
+  # "~/.config/alacritty/themes/themes/hyper.toml"
+  "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+  # "~/.config/alacritty/themes/themes/gruvbox_light.toml"
+]
+
+[terminal]
+shell = { program = "/bin/sh" }
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+[font]
+size = 11
+normal = { family = "BlexMonoNerdFont", style = "Regular" }
+bold = { family = "BlexMonoNerdFont", style = "Bold" }
+italic = { family = "BlexMonoNerdFont", style = "Italic" }
+bold_italic = { family = "BlexMonoNerdFont", style = "BoldItalic" }
+
+[env]
+term = "xterm-256color"

@@ -1,0 +1,23 @@
+alias la='ls -a --color'
+alias ll='ls -l --color'
+alias lla='ls -la --color'
+
+EDITOR="vi"
+
+# Add path here
+if ! [[ "$PATH" =~ "/home/tie/.cargo/bin" ]]; then
+    PATH="/home/tie/.cargo/bin:$PATH"
+fi
+
+# If Helix is installed do:
+if command -v hx > /dev/null; then
+    export HELIX_RUNTIME="~/.config/helix/runtime"
+    EDITOR="hx"
+    alias vi=hx
+fi
+
+# If zoxide is installed do:
+if command -v zoxide > /dev/null; then
+    eval "$(zoxide init bash)"
+fi
+
