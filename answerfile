@@ -1,7 +1,7 @@
 KEYMAPOPTS="us us"
 
-# Set hostname to 'alpine'
-HOSTNAMEOPTS=x509fa
+# Set hostname here
+HOSTNAMEOPTS=localhost
 
 TIMEZONEOPTS=Asia/Bangkok
 
