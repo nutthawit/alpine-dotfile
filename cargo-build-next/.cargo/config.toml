@@ -1,0 +1,12 @@
+[target.'cfg(target_os = "linux")']
+# Set the C complier
+cc = "clang"
+
+# Set the C++ compiler
+cxx = "clang++"
+
+# Set the linker to clang
+linker = "clang"
+
+# Use the LLD linker (part of the LLVM toolchain)
+rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]

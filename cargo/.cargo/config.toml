@@ -1,0 +1,9 @@
+[target.'cfg(target_os = "linux")']
+# Set the C complier
+cc = "gcc"
+
+# Set the C++ compiler
+cxx = "g++"
+
+# Set the linker to gcc
+linker = "gcc"
