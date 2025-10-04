@@ -22,7 +22,9 @@ set $menu wmenu-run
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /home/tie/Downloads/berserk-black-text-colored-yellow-wallpaper-2560x1600_7.jpg center
+output * bg /home/tie/Downloads/berserk-black-text-colored-red-blue-wallpaper-2560x1600_7.jpg center
 #
 # Example configuration:
 #
@@ -244,6 +246,7 @@ bar {
     colors {
         statusline #ffffff
         background #323232
+        background #000000
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
