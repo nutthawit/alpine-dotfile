@@ -1,0 +1,8 @@
+# .ashrc
+
+#!/bin/ash
+
+# Source global definitions
+if [ -f "/etc/ashrc" ]; then
+    . /etc/ashrc
+fi

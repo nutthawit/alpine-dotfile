@@ -2,7 +2,7 @@ Clone the repository
 
 ```sh
 DF="/home/${USER}/.dotfile"
-git clone dotfilerepo -c $DF
+git clone https://github.com/nutthawit/alpine-dotfile.git $DF
 ```
 
 Increase foot font size

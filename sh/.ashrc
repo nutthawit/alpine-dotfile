@@ -1,8 +1,10 @@
 # .ashrc
 
+#!/bin/ash
+
 # Source global definitions
-if [ -f /etc/ash ]; then
-    . /etc/ash
+if [ -r "/etc/ashrc" ]; then
+    source /etc/ashrc
 fi
 
 # Add my scripts
@@ -14,12 +16,12 @@ export PATH
 
 # If startship is installed do:
 if command -v startship > /dev/null; then
-	eval "$(starship init bash)"
+    eval "$(starship init bash)"
 fi
 
 # If fzf is installed do:
 if [ -f "${HOME}/.fzf" ]; then
-	eval "$(fzf --bash)"
+    eval "$(fzf --bash)"
 fi
 
 alias sudo=doas
