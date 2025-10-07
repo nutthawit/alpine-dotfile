@@ -1,5 +1,3 @@
-# .ashrc
-
 #!/bin/ash
 
 # Source global definitions
@@ -26,6 +24,8 @@ fi
 
 alias sudo=doas
 alias ss=doas
+alias bye="doas poweroff"
+alias seesoon="doas reboot"
 
 # Git aliases
 alias gtree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
