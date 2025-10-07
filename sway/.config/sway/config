@@ -251,4 +251,7 @@ bar {
     }
 }
 
+# Start `gui` runlevel
+exec openrc -U gui
+
 include /etc/sway/config.d/*
