@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# --- Configuration ---
+BACKLIGHT_DEV="intel_backlight"
+BACKLIGHT_PATH="/sys/class/backlight/$BACKLIGHT_DEV"
+AMOUNT_TO_ADJUST="$1"
+MAX=96000
+# ---------------------
+
+# 1. Check for required argument
+if [ -z "$AMOUNT_TO_ADJUST" ]; then
+    echo "Usage: $0 <amount>"
+    exit 1
+fi
+
+# 2. Get current and maximum brightness values
+if [ ! -d "$BACKLIGHT_PATH" ]; then
+    echo "Error: Backlight device '$BACKLIGHT_DEV' not found."
+    exit 1
+fi
+
+CURRENT=$(cat "$BACKLIGHT_PATH/brightness")
+MAX=$(cat "$BACKLIGHT_PATH/max_brightness")
+
+# 3. Calculate new brightness level
+# Use 'expr' or basic shell math to calculate the new value
+NEW_BRIGHTNESS=$(expr $CURRENT + $AMOUNT_TO_ADJUST)
+
+# 4. Enforce boundaries (0 to MAX)
+if [ "$NEW_BRIGHTNESS" -gt "$MAX" ]; then
+    NEW_BRIGHTNESS=$MAX
+elif [ "$NEW_BRIGHTNESS" -lt 0 ]; then
+    NEW_BRIGHTNESS=0
+fi
+
+# 5. Write the new value back (REQUIRES SUDO/DOAS)
+echo "$NEW_BRIGHTNESS" | doas tee "$BACKLIGHT_PATH/brightness"
+
+# The 'tee' command is used to ensure the write operation works correctly with sudo/doas.
+
+# echo "Brightness set to: $NEW_BRIGHTNESS (Max: $MAX)"

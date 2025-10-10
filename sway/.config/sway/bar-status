@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# --- Configuration ---
+# CHANGE THIS to your actual backlight device name!
+BACKLIGHT_DEV="intel_backlight"
+POWER_SUPPLY_DIR="/sys/class/power_supply"
+BACKLIGHT_DIR="/sys/class/backlight/$BACKLIGHT_DEV"
+# ---------------------
+
+# --- 1. Get Battery Status (Existing Logic) ---
+BATTERY_DEV=$(ls -1 $POWER_SUPPLY_DIR | grep -m 1 '^BAT')
+BATTERY_INFO=""
+
+if [ -n "$BATTERY_DEV" ]; then
+    CAPACITY_PATH="$POWER_SUPPLY_DIR/$BATTERY_DEV/capacity"
+    STATUS_PATH="$POWER_SUPPLY_DIR/$BATTERY_DEV/status"
+
+    capacity=$(cat "$CAPACITY_PATH" 2>/dev/null)
+    status=$(cat "$STATUS_PATH" 2>/dev/null)
+
+    if [ -n "$capacity" ]; then
+        if [ "$status" = "Charging" ]; then
+            icon="POW"
+        else
+            icon="BAT"
+        fi
+        BATTERY_INFO="$icon $capacity%"
+    fi
+fi
+
+# --- 2. Get Brightness Status ---
+BRIGHTNESS_INFO=""
+
+if [ -d "$BACKLIGHT_DIR" ]; then
+    current_bright=$(cat "$BACKLIGHT_DIR/brightness" 2>/dev/null)
+    max_bright=$(cat "$BACKLIGHT_DIR/max_brightness" 2>/dev/null)
+
+    if [ -n "$current_bright" ] && [ -n "$max_bright" ] && [ "$max_bright" -ne 0 ]; then
+        # Calculate percentage: (current * 100) / max
+        # The 'bc' command is used for floating-point math
+        brightness_pct=$(echo "scale=0; ($current_bright * 100) / $max_bright" | bc)
+        BRIGHTNESS_INFO="BRI $brightness_pct%"
+    fi
+fi
+
+
+# --- 3. Get Date and Time (Existing Logic) ---
+TIME_INFO=$(date +'%Y-%m-%d %X')
+
+# --- 4. Print combined output ---
+# Only include Brightness Info if it exists
+if [ -n "$BRIGHTNESS_INFO" ]; then
+    echo "$BRIGHTNESS_INFO | $BATTERY_INFO | $TIME_INFO"
+else
+    echo "$BATTERY_INFO | $TIME_INFO"
+fi

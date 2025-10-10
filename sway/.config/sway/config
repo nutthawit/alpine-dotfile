@@ -112,6 +112,12 @@ input "type:touchpad" {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Increase brightness by 10% of a typical max value (e.g., 50-100)
+    bindsym XF86MonBrightnessUp exec "${HOME}/.config/sway/adjust-brightness" 9600
+
+    # Decrease brightness
+    bindsym XF86MonBrightnessDown exec "${HOME}/.config/sway/adjust-brightness" -9600
 #
 # Moving around:
 #
@@ -241,7 +247,7 @@ mouse_warping container
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command while true; do /home/tie/.config/sway/bar-status; sleep 1; done
 
     colors {
         statusline #ffffff
