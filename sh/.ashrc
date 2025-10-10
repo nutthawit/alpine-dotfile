@@ -25,7 +25,15 @@ fi
 alias sudo=doas
 alias ss=doas
 alias bye="doas poweroff"
-alias seesoon="doas reboot"
+alias see="doas reboot"
+alias wif=impala
+alias wifi=impala
+alias mix=ncpamixer
+alias mixer=ncpamixer
+alias vol=ncpamixer
+alias volume=ncpamixer
+alias blu=bluetuith
+alias blue=bluetuith
 
 # Git aliases
 alias gtree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
