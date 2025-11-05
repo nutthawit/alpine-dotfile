@@ -35,20 +35,30 @@ alias volume=ncpamixer
 alias blu=bluetuith
 alias blue=bluetuith
 
+alias tns="tmux new -s"
+alias tls="tmux ls"
+alias tat="tmux attach -t"
+alias tatt="tmux attach -t"
+alias tks="tmux kill-server"
+
 # Git aliases
 alias gtree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 alias g3="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 alias gt="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 
+alias gini='git init'
 alias ginit='git init'
 alias gpull='git pull'
 alias gpl='git pull'
 alias gpush='git push'
 alias gph='git push'
 alias gdiff='git diff'
+alias grest='git restore'
+alias grte='git restore'
 alias gdf='git diff'
 alias gss='git status'
 alias gadd='git add'
+alias gcm='git commit -m'
 alias gcom='git commit -m'
 alias gcomamd='git commit --amend'
 alias gct='git commit -m'
@@ -58,8 +68,8 @@ alias grt='git reset'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gck='git checkout'
-alias gckb='git checkout -b'
 alias gch='git checkout'
+alias gckb='git checkout -b'
 alias gchb='git checkout -b'
 alias gfa='git fetch --all'
 alias grv='git remote -v'

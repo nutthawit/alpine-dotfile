@@ -4,9 +4,11 @@
 [editor]
 line-number = "relative"
 trim-trailing-whitespace = true
+rulers = [80, 100]
+indent-heuristic = "simple"
 
 [editor.lsp]
-display-inlay-hints = true
+display-inlay-hints = false
 goto-reference-include-declaration = true
 
 # [editor.auto-save]
@@ -38,3 +40,5 @@ tabpad = "→" # Tabs will look like "→···" (depending on tab width)
 render = true
 character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
 skip-levels = 1
+
+

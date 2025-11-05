@@ -73,6 +73,7 @@ output HDMI-A-1 {
 input "type:keyboard" xkb_options caps:swapescape
 input "type:touchpad" {
     natural_scroll enabled
+    tap enabled
 }
 
 ### Key bindings
