@@ -22,6 +22,11 @@ if command -v fzf > /dev/null; then
     eval "$(fzf --bash)"
 fi
 
+# If zoxide is installed do:
+if command -v zoxide > /dev/null; then
+    eval "$(zoxide init bash)"
+fi
+
 EDITOR=nvim
 
 # Tmux aliases
