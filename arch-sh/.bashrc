@@ -65,7 +65,7 @@ alias gfa='git fetch --all'
 alias gdf='git diff'
 alias gdiff='git diff'
 alias gre='git restore'
-alias gres='git restore'
+alias grte='git restore'
 alias gss='git status'
 #
 # Add, commit and reset
