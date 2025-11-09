@@ -24,7 +24,7 @@ fi
 
 # If zoxide is installed do:
 if command -v zoxide > /dev/null; then
-    eval "$(zoxide init bash)"
+    eval "$(zoxide init --cmd cd bash)"
 fi
 
 EDITOR=nvim
@@ -90,10 +90,10 @@ alias gckb='git checkout -b'
 alias gc=git-crypt
 alias gg=lazygit
 
-alias ls='ls --color=auto'
-alias la='ls -a --color=auto'
-alias ll='ls -l --color=auto'
-alias grep='grep --color=auto'
+#alias ls='ls --color=auto'
+#alias la='ls -a --color=auto'
+#alias ll='ls -l --color=auto'
+#alias grep='grep --color=auto'
 alias bye='sudo poweroff'
 alias see='sudo reboot'
 
