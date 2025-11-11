@@ -43,7 +43,6 @@ alias g=git
 # Log
 alias gtree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 alias g3="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
-alias gt="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 # 
@@ -60,6 +59,7 @@ alias gpl='git pull'
 alias gpush='git push'
 alias gph='git push'
 alias gfa='git fetch --all'
+alias gt='git tag'
 #
 # Diff, restore and status
 alias gdf='git diff'
@@ -90,10 +90,10 @@ alias gckb='git checkout -b'
 alias gc=git-crypt
 alias gg=lazygit
 
-#alias ls='ls --color=auto'
-#alias la='ls -a --color=auto'
-#alias ll='ls -l --color=auto'
-#alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias la='ls -a --color=auto'
+alias ll='ls -l --color=auto'
+alias grep='grep --color=auto'
 alias bye='sudo poweroff'
 alias see='sudo reboot'
 
