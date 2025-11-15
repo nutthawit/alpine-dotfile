@@ -10,11 +10,6 @@ if [ -d "${HOME}/.cargo/bin" ]; then
     PATH="${HOME}/.cargo/bin:${PATH}"
 fi
 
-# Add Lua library path
-if [ -d "/usr/local/lib/luarocks" ]; then
-    PATH="/usr/local/lib/luarocks/rocks-5.4:${PATH}"
-fi
-
 export PATH
 
 # If starship is installed do:
