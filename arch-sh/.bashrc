@@ -10,6 +10,11 @@ if [ -d "${HOME}/.cargo/bin" ]; then
     PATH="${HOME}/.cargo/bin:${PATH}"
 fi
 
+# Add Lua library path
+if [ -d "/usr/local/lib/luarocks" ]; then
+    PATH="/usr/local/lib/luarocks/rocks-5.4:${PATH}"
+fi
+
 export PATH
 
 # If starship is installed do:
@@ -90,9 +95,9 @@ alias gckb='git checkout -b'
 alias gc=git-crypt
 alias gg=lazygit
 
-alias ls='ls --color=auto'
-alias la='ls -a --color=auto'
-alias ll='ls -l --color=auto'
+alias ls='ls -h --color=auto'
+alias la='ls -ah --color=auto'
+alias ll='ls -ahl --color=auto'
 alias grep='grep --color=auto'
 alias bye='sudo poweroff'
 alias see='sudo reboot'
