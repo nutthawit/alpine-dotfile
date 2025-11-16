@@ -24,7 +24,7 @@ fi
 
 # If zoxide is installed do:
 if command -v zoxide > /dev/null; then
-    eval "$(zoxide init --cmd cd bash)"
+    eval "$(zoxide init bash)"
 fi
 
 EDITOR=nvim
